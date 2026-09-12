@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wilderness & Cities — FNAB</title>
+    <meta name="description" content="Browse curated stays across Helsinki, Jyväskylä, Oulu, Turku, and Finland's northern-lights country." />
+    <meta name="author" content="FNAB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wilderness & Cities — FNAB" />
+    <meta property="og:description" content="Curated stays across Finland's cities and aurora country." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=19" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__row">
+        <a href="index.html" class="header__brand" aria-label="FNAB home">
+          <img class="header__brand-icon" src="assets/img/logo-mark.png" alt="" width="28" height="28" />
+              <span class="header__brand-mark">FNAB</span>
+          <span class="header__brand-sub">NORTHERN AREAS BOOKING</span>
+        </a>
+        <nav aria-label="Primary" class="header__nav">
+          <a href="properties.html">STAYS</a>
+          <a href="destinations.html" class="header__nav-hide-mobile" aria-current="page">WILDERNESS</a>
+          <a href="checkout.html">BOOKING</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="container">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">( 00 ) WILDERNESS</p>
+            <h1>Every shore, every light.</h1>
+          </div>
+          <p class="page-head__meta" id="wilderness-meta">23 CURATED AREAS · 5 REGIONS</p>
+        </div>
+
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter by region">
+          <button type="button" class="filter-btn is-active" data-filter="all">ALL</button>
+          <button type="button" class="filter-btn" data-filter="helsinki">HELSINKI</button>
+          <button type="button" class="filter-btn" data-filter="jyvaskyla">JYVÄSKYLÄ</button>
+          <button type="button" class="filter-btn" data-filter="oulu">OULU</button>
+          <button type="button" class="filter-btn" data-filter="turku">TURKU</button>
+          <button type="button" class="filter-btn" data-filter="northern-lights">NORTHERN LIGHTS</button>
+        </div>
+
+        <!-- Static so search engines and non-JS crawlers see the real destination
+             content. Keep this markup in sync with `destinations` in
+             assets/js/booking.js if you add/change one -- JS below only
+             handles filtering, selection, and scroll-reveal, it doesn't build this. -->
+        <div class="gallery-grid" id="gallery-grid">
+            <article class="gallery-card" data-category="helsinki">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/helsinki-kallio.jpg" alt="Helsinki — Kallio" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€185</span>
+                <div class="gallery-card__label">
+                  <span>HELSINKI</span>
+                  <strong>Kallio</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="helsinki-kallio">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="helsinki">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/helsinki-kamppi.jpg" alt="Helsinki — Kamppi" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€245</span>
+                <div class="gallery-card__label">
+                  <span>HELSINKI</span>
+                  <strong>Kamppi</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="helsinki-kamppi">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="helsinki">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/helsinki-katajanokka.jpg" alt="Helsinki — Katajanokka" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€310</span>
+                <div class="gallery-card__label">
+                  <span>HELSINKI</span>
+                  <strong>Katajanokka</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="helsinki-katajanokka">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="helsinki">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/helsinki-punavuori.jpg" alt="Helsinki — Punavuori" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€225</span>
+                <div class="gallery-card__label">
+                  <span>HELSINKI</span>
+                  <strong>Punavuori</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="helsinki-punavuori">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="helsinki">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/helsinki-suomenlinna.jpg" alt="Helsinki — Suomenlinna" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€275</span>
+                <div class="gallery-card__label">
+                  <span>HELSINKI</span>
+                  <strong>Suomenlinna</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="helsinki-suomenlinna">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="helsinki">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/helsinki-toolo.jpg" alt="Helsinki — Töölö" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€195</span>
+                <div class="gallery-card__label">
+                  <span>HELSINKI</span>
+                  <strong>Töölö</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="helsinki-toolo">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="jyvaskyla">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/jyvaskyla-kuokkala.jpg" alt="Jyväskylä — Kuokkala" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€160</span>
+                <div class="gallery-card__label">
+                  <span>JYVÄSKYLÄ</span>
+                  <strong>Kuokkala</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="jyvaskyla-kuokkala">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="jyvaskyla">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/jyvaskyla-lutakko.jpg" alt="Jyväskylä — Lutakko" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€190</span>
+                <div class="gallery-card__label">
+                  <span>JYVÄSKYLÄ</span>
+                  <strong>Lutakko</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="jyvaskyla-lutakko">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="oulu">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/oulu-nallikari.jpg" alt="Oulu — Nallikari" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€205</span>
+                <div class="gallery-card__label">
+                  <span>OULU</span>
+                  <strong>Nallikari</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="oulu-nallikari">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="oulu">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/oulu-hietasaari.jpg" alt="Oulu — Hietasaari" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€175</span>
+                <div class="gallery-card__label">
+                  <span>OULU</span>
+                  <strong>Hietasaari</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="oulu-hietasaari">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="oulu">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/oulu-tuira.jpg" alt="Oulu — Tuira" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€165</span>
+                <div class="gallery-card__label">
+                  <span>OULU</span>
+                  <strong>Tuira</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="oulu-tuira">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="turku">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/turku-port-of-turku.jpg" alt="Turku — Port of Turku" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€220</span>
+                <div class="gallery-card__label">
+                  <span>TURKU</span>
+                  <strong>Port of Turku</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="turku-port-of-turku">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="turku">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/turku-ruissalo.jpg" alt="Turku — Ruissalo" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€250</span>
+                <div class="gallery-card__label">
+                  <span>TURKU</span>
+                  <strong>Ruissalo</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="turku-ruissalo">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="turku">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/turku-kakola.jpg" alt="Turku — Kakola" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€230</span>
+                <div class="gallery-card__label">
+                  <span>TURKU</span>
+                  <strong>Kakola</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="turku-kakola">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-inari.jpg" alt="Inari — Lake Inari wilderness" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€480</span>
+                <div class="gallery-card__label">
+                  <span>INARI</span>
+                  <strong>Lake Inari wilderness</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-inari">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-ivalo.jpg" alt="Ivalo — Away from the lights" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€395</span>
+                <div class="gallery-card__label">
+                  <span>IVALO</span>
+                  <strong>Away from the lights</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-ivalo">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-kemi.jpg" alt="Kemi — Coastal Lapland" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€420</span>
+                <div class="gallery-card__label">
+                  <span>KEMI</span>
+                  <strong>Coastal Lapland</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-kemi">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-kilpisjarvi.jpg" alt="Kilpisjärvi — Fell landscapes, dark skies" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€560</span>
+                <div class="gallery-card__label">
+                  <span>KILPISJÄRVI</span>
+                  <strong>Fell landscapes, dark skies</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-kilpisjarvi">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-levi.jpg" alt="Levi — Kätkä fell outskirts" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€510</span>
+                <div class="gallery-card__label">
+                  <span>LEVI</span>
+                  <strong>Kätkä fell outskirts</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-levi">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-muonio.jpg" alt="Muonio — Pallas–Yllästunturi" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€445</span>
+                <div class="gallery-card__label">
+                  <span>MUONIO</span>
+                  <strong>Pallas–Yllästunturi</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-muonio">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-rovaniemi.jpg" alt="Rovaniemi — Ounasvaara" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€465</span>
+                <div class="gallery-card__label">
+                  <span>ROVANIEMI</span>
+                  <strong>Ounasvaara</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-rovaniemi">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-saariselka.jpg" alt="Saariselkä — Urho Kekkonen National Park" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€525</span>
+                <div class="gallery-card__label">
+                  <span>SAARISELKÄ</span>
+                  <strong>Urho Kekkonen National Park</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-saariselka">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+            <article class="gallery-card" data-category="northern-lights">
+              <div class="gallery-card__frame">
+                <img src="assets/img/destinations/northern-lights-yllas.jpg" alt="Ylläs — Ylläs National Park" width="736" height="736" loading="lazy" />
+                <div class="gallery-card__scrim"></div>
+                <span class="gallery-card__price">€495</span>
+                <div class="gallery-card__label">
+                  <span>YLLÄS</span>
+                  <strong>Ylläs National Park</strong>
+                </div>
+              </div>
+              <button type="button" class="btn btn--outline" data-select="northern-lights-yllas">
+                SELECT
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/config.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="assets/js/auth.js" defer></script>
+    <script src="assets/js/booking.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      FNAB_AUTH.renderAuthNav();
+
+      const booking = FNAB.getBooking();
+      const selectedPackage = FNAB.getPackage(booking.packageTier);
+      if (selectedPackage) {
+        document.getElementById("wilderness-meta").textContent =
+          `${selectedPackage.name.toUpperCase()} PACKAGE SELECTED · +€${selectedPackage.price} PER TRIP`;
+      }
+
+      const grid = document.getElementById("gallery-grid");
+
+      initRevealOnScroll();
+
+      document.getElementById("filter-bar").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-filter]");
+        if (!button) return;
+
+        document.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.toggle("is-active", btn === button));
+
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".gallery-card").forEach((card) => {
+          card.hidden = filter !== "all" && card.dataset.category !== filter;
+        });
+      });
+
+      grid.querySelectorAll("[data-select]").forEach((button) => {
+        button.addEventListener("click", () => {
+          FNAB.setBooking({ propertyId: button.dataset.select });
+          window.location.href = "checkout.html";
+        });
+      });
+    });
+    </script>
+  </body>
+</html>

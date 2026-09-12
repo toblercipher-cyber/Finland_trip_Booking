@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Account — FNAB</title>
+    <meta name="description" content="Create an FNAB account to book your Finnish stay." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=19" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__row">
+        <a href="index.html" class="header__brand" aria-label="FNAB home">
+          <img class="header__brand-icon" src="assets/img/logo-mark.png" alt="" width="28" height="28" />
+              <span class="header__brand-mark">FNAB</span>
+          <span class="header__brand-sub">NORTHERN AREAS BOOKING</span>
+        </a>
+        <nav aria-label="Primary" class="header__nav">
+          <a href="properties.html">STAYS</a>
+          <a href="destinations.html" class="header__nav-hide-mobile">WILDERNESS</a>
+          <a href="checkout.html">BOOKING</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="auth-shell">
+        <div class="auth-card">
+          <p class="eyebrow">( ACCOUNT )</p>
+          <h1 class="section-title" style="font-size: 1.5rem;">Create your account.</h1>
+
+          <div class="auth-note" id="config-note" role="status">Authentication isn't configured yet — see the setup steps in the project README.</div>
+          <div class="auth-error" id="auth-error" role="alert" hidden></div>
+          <div class="auth-note" id="confirm-note" role="status" hidden>Almost there — check your email for a confirmation link before logging in.</div>
+
+          <form id="register-form">
+            <label class="form-field">
+              <span>EMAIL</span>
+              <input required type="email" name="email" placeholder="aino.laine@example.fi" autocomplete="email" />
+            </label>
+            <label class="form-field">
+              <span>PASSWORD</span>
+              <input required type="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" />
+            </label>
+            <label class="form-field">
+              <span>CONFIRM PASSWORD</span>
+              <input required type="password" name="confirmPassword" placeholder="••••••••" autocomplete="new-password" minlength="8" />
+            </label>
+            <button type="submit" id="register-submit" class="btn btn--primary">CREATE ACCOUNT</button>
+          </form>
+
+          <div class="auth-divider">OR</div>
+
+          <button type="button" id="google-register" class="btn btn--google">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M23.52 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47c-.28 1.5-1.13 2.77-2.4 3.62v3.01h3.86c2.26-2.08 3.59-5.15 3.59-8.87z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.86l-3.86-3.01c-1.07.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.27v3.11C3.24 21.3 7.28 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.32c-.24-.72-.38-1.49-.38-2.32s.14-1.6.38-2.32V6.57H1.27C.46 8.23 0 10.06 0 12s.46 3.77 1.27 5.43z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.28 0 3.24 2.7 1.27 6.57l4 3.11c.95-2.85 3.6-4.93 6.73-4.93z"/></svg>
+            CONTINUE WITH GOOGLE
+          </button>
+
+          <p class="auth-footer">Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/config.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="assets/js/auth.js" defer></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("config-note").hidden = FNAB_AUTH.isConfigured;
+
+      const params = new URLSearchParams(window.location.search);
+      const redirectTarget = params.get("redirect") || "checkout.html";
+
+      const errorBox = document.getElementById("auth-error");
+      const confirmNote = document.getElementById("confirm-note");
+      const submitBtn = document.getElementById("register-submit");
+
+      function showError(message) {
+        confirmNote.hidden = true;
+        errorBox.textContent = message;
+        errorBox.hidden = false;
+      }
+
+      document.getElementById("register-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        errorBox.hidden = true;
+        confirmNote.hidden = true;
+
+        const email = event.target.email.value.trim();
+        const password = event.target.password.value;
+        const confirmPassword = event.target.confirmPassword.value;
+
+        if (password !== confirmPassword) {
+          showError("Passwords don't match.");
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "CREATING ACCOUNT…";
+
+        const { data, error } = await FNAB_AUTH.signUp(email, password);
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "CREATE ACCOUNT";
+
+        if (error) {
+          showError(error.message);
+          return;
+        }
+
+        if (data.session) {
+          // Email confirmation is off for this project — the account is
+          // immediately usable, so go straight to what the user was doing.
+          window.location.href = redirectTarget;
+          return;
+        }
+
+        // Email confirmation is required — nothing more to do until they
+        // click the link Supabase just sent them.
+        event.target.reset();
+        confirmNote.hidden = false;
+      });
+
+      document.getElementById("google-register").addEventListener("click", () => {
+        FNAB_AUTH.signInWithGoogle(redirectTarget);
+      });
+
+      (async () => {
+        const session = await FNAB_AUTH.getSession();
+        if (session) window.location.href = redirectTarget;
+      })();
+    });
+    </script>
+  </body>
+</html>

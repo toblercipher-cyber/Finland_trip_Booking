@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your FNAB reservation is confirmed</title>
+    <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]-->
+    <!-- Orbitron matches the FNAB website's font exactly. Most email clients
+         (Outlook desktop, many corporate filters) ignore web fonts entirely
+         and use the fallback below instead — that's a hard email-client
+         limitation, not something fixable from the template side. Clients
+         that DO support it (Apple Mail, iOS Mail, most Android, Gmail's
+         webview) will render the real thing. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      body, table, td { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+      table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+      img { -ms-interpolation-mode: bicubic; border: 0; outline: none; }
+      body { margin: 0; padding: 0; width: 100% !important; background-color: #0e1210; }
+      a { color: inherit; }
+      @media only screen and (max-width: 600px) {
+        .fnab-container { width: 100% !important; }
+        .fnab-px { padding-left: 20px !important; padding-right: 20px !important; }
+      }
+    </style>
+  </head>
+  <body style="margin:0; padding:0; background-color:#0e1210; font-family:'Orbitron', Arial, Helvetica, sans-serif;">
+    <!-- Preheader, hidden in the body but shown in inbox preview -->
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0; font-size:1px; line-height:1px; color:#0e1210;">
+      Your stay at {{stay}} is reserved — booking {{bookingReference}}.
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0e1210" style="background-color:#0e1210;">
+      <tr>
+        <td align="center" style="padding: 32px 16px;">
+          <table role="presentation" class="fnab-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px;">
+
+            <!-- Wordmark -->
+            <tr>
+              <td class="fnab-px" style="padding: 8px 24px 28px;">
+                <span style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 6px; color: #f2f0e9;">F N A B</span>
+                <span style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 3px; color: #8f9a8d; margin-left: 10px;">NORTHERN AREAS BOOKING</span>
+              </td>
+            </tr>
+
+            <!-- Confirmation banner -->
+            <tr>
+              <td class="fnab-px" style="padding: 0 24px 28px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1c231e" style="background-color:#1c231e; border:1px solid #2c352c; border-radius:4px;">
+                  <tr>
+                    <td style="padding: 28px 28px 24px;">
+                      <p style="margin:0 0 10px; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 3px; color: #8f9a8d;">( CONFIRMED )</p>
+                      <p style="margin:0 0 6px; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; line-height: 1.25; color: #f2f0e9;">Your stay is reserved.</p>
+                      <p style="margin:0; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px; color: #b7bfb5;">
+                        Thank you, {{firstName}} — we've locked in your dates. Details are below, and a member of our team will be in touch if anything needs your attention before you travel.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Trip photo -->
+            <tr>
+              <td class="fnab-px" style="padding: 0 24px 20px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1c231e" style="background-color:#1c231e; border-radius:4px;">
+                  <tr>
+                    <td style="border-radius:4px; overflow:hidden; line-height:0; font-size:0;">
+                      <img src="{{tripImage}}" width="600" alt="{{stay}}" style="display:block; width:100%; max-width:600px; height:auto; border-radius:4px;" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Stay summary -->
+            <tr>
+              <td class="fnab-px" style="padding: 0 24px 20px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#151a15" style="background-color:#151a15; border:1px solid #262e26; border-radius:4px;">
+                  <tr>
+                    <td style="padding: 24px 28px 8px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; color: #8f9a8d;">STAY SUMMARY</td>
+                          <td align="right" style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 9px; letter-spacing: 1px; color: #8f9a8d;">{{bookingReference}}</td>
+                        </tr>
+                      </table>
+                      <p style="margin: 14px 0 0; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-weight: 700; font-size: 18px; color: #f2f0e9;">{{stay}}</p>
+                    </td>
+                  </tr>
+
+                  <!-- Rows -->
+                  <tr>
+                    <td style="padding: 0 28px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td colspan="2" style="border-top: 1px solid #262e26; padding-top: 14px;"></td>
+                        </tr>
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #8f9a8d; padding-bottom: 14px;">Dates</td>
+                          <td align="right" style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #f2f0e9; padding-bottom: 14px;">{{checkIn}} &rarr; {{checkOut}} &middot; {{nights}} nights</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="border-top: 1px solid #262e26; padding-top: 14px;"></td>
+                        </tr>
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #8f9a8d; padding-bottom: 14px;">Guests</td>
+                          <td align="right" style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #f2f0e9; padding-bottom: 14px;">{{guests}}</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="border-top: 1px solid #262e26; padding-top: 14px;"></td>
+                        </tr>
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #8f9a8d; padding-bottom: 14px;">Package</td>
+                          <td align="right" style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #f2f0e9; padding-bottom: 14px;">{{package}}</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="border-top: 1px solid #262e26; padding-top: 16px;"></td>
+                        </tr>
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 11px; letter-spacing: 1px; color: #8f9a8d; padding-bottom: 24px;">TOTAL</td>
+                          <td align="right" style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-weight: 700; font-size: 18px; color: #f2f0e9; padding-bottom: 24px;">{{total}}</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Guest details -->
+            <tr>
+              <td class="fnab-px" style="padding: 0 24px 28px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#151a15" style="background-color:#151a15; border:1px solid #262e26; border-radius:4px;">
+                  <tr>
+                    <td style="padding: 22px 28px;">
+                      <p style="margin:0 0 14px; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; color: #8f9a8d;">GUEST DETAILS</p>
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #8f9a8d; padding-bottom: 10px; width: 90px;">Name</td>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #f2f0e9; padding-bottom: 10px;">{{firstName}} {{lastName}}</td>
+                        </tr>
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #8f9a8d; padding-bottom: 10px;">Email</td>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #f2f0e9; padding-bottom: 10px;">{{email}}</td>
+                        </tr>
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #8f9a8d; padding-bottom: 10px;">Phone</td>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #f2f0e9; padding-bottom: 10px;">{{phone}}</td>
+                        </tr>
+                        <tr>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #8f9a8d;">From</td>
+                          <td style="font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 12px; color: #f2f0e9;">{{city}}, {{country}}</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA -->
+            <tr>
+              <td class="fnab-px" align="center" style="padding: 0 24px 32px;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td align="center" bgcolor="#f2f0e9" style="background-color:#f2f0e9; border-radius:2px;">
+                      <a href="https://YOUR-DOMAIN-HERE.com/checkout.html" style="display:inline-block; padding:14px 28px; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 11px; font-weight:700; letter-spacing:2px; color:#0e1210; text-decoration:none;">
+                        VIEW YOUR BOOKING
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td class="fnab-px" align="center" style="padding: 8px 24px 32px; border-top: 1px solid #20261f;">
+                <p style="margin: 24px 0 6px; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 11px; line-height: 18px; color: #6c766b;">
+                  Questions about this reservation? Reply to this email and we'll help.
+                </p>
+                <p style="margin: 0; font-family: 'Orbitron', Arial, Helvetica, sans-serif; font-size: 10px; letter-spacing: 1px; color: #4a534a;">
+                  FNAB &middot; Northern Areas Booking
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

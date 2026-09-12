@@ -1,0 +1,14 @@
+# Local auth credentials (Supabase URL + anon key) — never commit real values.
+# Copy assets/js/config.example.js to assets/js/config.js and fill it in.
+assets/js/config.js
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

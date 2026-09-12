@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Finnish Glass Igloos & Cabins — FNAB</title>
+    <meta name="description" content="Book private glass igloos and timber cabins beneath the northern lights in Finnish Lapland." />
+    <meta name="author" content="FNAB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Finnish Glass Igloos & Cabins — FNAB" />
+    <meta property="og:description" content="Cinematic stays beneath the northern lights in Finnish Lapland." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=19" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <img class="hero__image" src="assets/img/fnab-hero.jpg?v=3" alt="Cloud-wrapped alpine peak rising above a dark pine forest" width="1920" height="1440" />
+        <div class="hero__gradient"></div>
+
+        <header class="header header--overlay">
+          <div class="header__row">
+            <a href="index.html" class="header__brand" aria-label="FNAB home">
+              <img class="header__brand-icon" src="assets/img/logo-mark.png" alt="" width="28" height="28" />
+              <span class="header__brand-mark">FNAB</span>
+              <span class="header__brand-sub">NORTHERN AREAS BOOKING</span>
+            </a>
+            <nav aria-label="Primary" class="header__nav">
+              <a href="properties.html">STAYS</a>
+              <a href="destinations.html" class="header__nav-hide-mobile">WILDERNESS</a>
+              <a href="checkout.html">BOOKING</a>
+            </nav>
+          </div>
+        </header>
+
+        <div class="hero__content">
+          <div class="hero__text">
+            <p class="hero__kicker eyebrow">68°09′ N · LAPLAND · BLUE HOUR</p>
+            <h1 class="hero__title">Glass over the black pine.</h1>
+            <p class="hero__subtitle">Aurora glass igloos and hand-hewn timber cabins, set into Finland's far north.</p>
+
+            <form id="search-form" class="search-bar">
+              <label class="field">
+                <span class="field__label">ARRIVE</span>
+                <input class="field__input" id="check-in" type="date" min="2026-01-01" required />
+              </label>
+              <label class="field">
+                <span class="field__label">DEPART</span>
+                <input class="field__input" id="check-out" type="date" required />
+              </label>
+              <label class="field">
+                <span class="field__label">GUESTS</span>
+                <select class="field__select" id="guests">
+                  <option value="1">1 GUEST</option>
+                  <option value="2" selected>2 GUESTS</option>
+                  <option value="3">3 GUESTS</option>
+                  <option value="4">4 GUESTS</option>
+                  <option value="5">5 GUESTS</option>
+                  <option value="6">6 GUESTS</option>
+                </select>
+              </label>
+              <button type="submit" class="btn btn--primary">
+                SEARCH
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+
+          <div class="card-stack" id="card-stack" tabindex="0" aria-label="Explore Finnish destinations — arrow keys or drag to browse">
+            <div class="card-stack__stage" id="card-stack-stage">
+              <a href="checkout.html" class="stack-card" data-property="helsinki-kallio">
+                <div class="stack-card__media"><img src="assets/img/destinations/helsinki-kallio.jpg" alt="Helsinki — Kallio" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">HELSINKI</span><strong class="stack-card__title">Kallio</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+              <a href="checkout.html" class="stack-card" data-property="helsinki-suomenlinna">
+                <div class="stack-card__media"><img src="assets/img/destinations/helsinki-suomenlinna.jpg" alt="Helsinki — Suomenlinna" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">HELSINKI</span><strong class="stack-card__title">Suomenlinna</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+              <a href="checkout.html" class="stack-card" data-property="jyvaskyla-kuokkala">
+                <div class="stack-card__media"><img src="assets/img/destinations/jyvaskyla-kuokkala.jpg" alt="Jyväskylä — Kuokkala" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">JYVÄSKYLÄ</span><strong class="stack-card__title">Kuokkala</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+              <a href="checkout.html" class="stack-card" data-property="oulu-nallikari">
+                <div class="stack-card__media"><img src="assets/img/destinations/oulu-nallikari.jpg" alt="Oulu — Nallikari" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">OULU</span><strong class="stack-card__title">Nallikari</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+              <a href="checkout.html" class="stack-card" data-property="turku-port-of-turku">
+                <div class="stack-card__media"><img src="assets/img/destinations/turku-port-of-turku.jpg" alt="Turku — Port of Turku" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">TURKU</span><strong class="stack-card__title">Port of Turku</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+              <a href="checkout.html" class="stack-card" data-property="northern-lights-rovaniemi">
+                <div class="stack-card__media"><img src="assets/img/destinations/northern-lights-rovaniemi.jpg" alt="Rovaniemi — Ounasvaara" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">ROVANIEMI</span><strong class="stack-card__title">Ounasvaara</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+              <a href="checkout.html" class="stack-card" data-property="northern-lights-levi">
+                <div class="stack-card__media"><img src="assets/img/destinations/northern-lights-levi.jpg" alt="Levi — Kätkä fell outskirts" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">LEVI</span><strong class="stack-card__title">Kätkä fell outskirts</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+              <a href="checkout.html" class="stack-card" data-property="northern-lights-inari">
+                <div class="stack-card__media"><img src="assets/img/destinations/northern-lights-inari.jpg" alt="Inari — Lake Inari wilderness" loading="lazy" /></div>
+                <div class="stack-card__scrim"></div>
+                <div class="stack-card__info"><span class="stack-card__eyebrow">INARI</span><strong class="stack-card__title">Lake Inari wilderness</strong><span class="stack-card__cta">VIEW STAY</span></div>
+              </a>
+            </div>
+            <div class="card-stack__controls">
+              <button type="button" class="stack-arrow" data-dir="left" aria-label="Previous destination">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="card-stack__dots" id="card-stack-dots"></div>
+              <button type="button" class="stack-arrow" data-dir="right" aria-label="Next destination">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/config.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="assets/js/auth.js" defer></script>
+    <script src="assets/js/booking.js" defer></script>
+    <script src="assets/js/main.js?v=8" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initHeroParallax();
+        initCardStack();
+        FNAB_AUTH.renderAuthNav();
+
+        const booking = FNAB.getBooking();
+        document.getElementById("check-in").value = booking.checkIn;
+        document.getElementById("check-out").value = booking.checkOut;
+        document.getElementById("check-out").min = booking.checkIn;
+        document.getElementById("guests").value = String(booking.guests);
+
+        document.getElementById("check-in").addEventListener("change", (event) => {
+          document.getElementById("check-out").min = event.target.value;
+        });
+
+        document.getElementById("search-form").addEventListener("submit", (event) => {
+          event.preventDefault();
+          FNAB.setBooking({
+            checkIn: document.getElementById("check-in").value,
+            checkOut: document.getElementById("check-out").value,
+            adults: Number(document.getElementById("guests").value),
+            children: 0,
+          });
+          window.location.href = "properties.html";
+        });
+      });
+    </script>
+  </body>
+</html>

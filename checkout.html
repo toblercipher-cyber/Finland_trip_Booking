@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Complete Your Booking — FNAB</title>
+    <meta name="description" content="Review your selected Finnish stay and complete your FNAB booking details." />
+    <meta name="author" content="FNAB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Complete Your Booking — FNAB" />
+    <meta property="og:description" content="Review and confirm your northern Finland stay." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=19" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__row">
+        <a href="index.html" class="header__brand" aria-label="FNAB home">
+          <img class="header__brand-icon" src="assets/img/logo-mark.png" alt="" width="28" height="28" />
+              <span class="header__brand-mark">FNAB</span>
+          <span class="header__brand-sub">NORTHERN AREAS BOOKING</span>
+        </a>
+        <nav aria-label="Primary" class="header__nav">
+          <a href="properties.html">STAYS</a>
+          <a href="destinations.html" class="header__nav-hide-mobile">WILDERNESS</a>
+          <a href="checkout.html" aria-current="page">BOOKING</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page--checkout" id="checkout-main" hidden>
+      <section class="container">
+        <p class="eyebrow">( 02 ) CONFIRM</p>
+        <h1 class="section-title">Reserve the stay.</h1>
+
+        <div class="checkout-grid">
+          <form id="checkout-form" class="checkout-form">
+            <div class="field-grid">
+              <label class="form-field">
+                <span>FIRST NAME</span>
+                <input required name="firstName" placeholder="Aino" />
+              </label>
+              <label class="form-field">
+                <span>LAST NAME</span>
+                <input required name="lastName" placeholder="Laine" />
+              </label>
+            </div>
+            <label class="form-field">
+              <span>EMAIL</span>
+              <input required type="email" name="email" placeholder="aino.laine@example.fi" />
+            </label>
+            <label class="form-field">
+              <span>PHONE</span>
+              <input required type="tel" name="phone" placeholder="+358 40 123 4567" />
+            </label>
+            <div class="field-grid">
+              <label class="form-field">
+                <span>CHECK IN</span>
+                <input required type="date" id="checkout-check-in" />
+              </label>
+              <label class="form-field">
+                <span>CHECK OUT</span>
+                <input required type="date" id="checkout-check-out" />
+              </label>
+            </div>
+
+            <div class="form-field">
+              <span>TRAVELERS</span>
+              <div class="travelers">
+                <button type="button" class="travelers-trigger" id="travelers-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="travelers-panel">
+                  <span id="travelers-summary">1 Adult</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="travelers-panel" id="travelers-panel" role="group" aria-label="Travelers" hidden>
+                  <div class="travelers-row">
+                    <div class="travelers-row__text">
+                      <p>Adults</p>
+                      <span>Age 13+</span>
+                    </div>
+                    <div class="stepper">
+                      <button type="button" class="stepper__btn" data-role="adults" data-delta="-1" aria-label="Decrease adults">−</button>
+                      <span class="stepper__value" id="adults-value">1</span>
+                      <button type="button" class="stepper__btn" data-role="adults" data-delta="1" aria-label="Increase adults">+</button>
+                    </div>
+                  </div>
+                  <div class="travelers-row">
+                    <div class="travelers-row__text">
+                      <p>Children</p>
+                      <span>Age 0–12</span>
+                    </div>
+                    <div class="stepper">
+                      <button type="button" class="stepper__btn" data-role="children" data-delta="-1" aria-label="Decrease children">−</button>
+                      <span class="stepper__value" id="children-value">0</span>
+                      <button type="button" class="stepper__btn" data-role="children" data-delta="1" aria-label="Increase children">+</button>
+                    </div>
+                  </div>
+                  <div class="travelers-total">
+                    <span>TOTAL GUESTS</span>
+                    <strong id="travelers-total-value">1</strong>
+                  </div>
+                  <button type="button" class="btn btn--outline travelers-done" id="travelers-done">DONE</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <span>CLIENT TYPE</span>
+              <div class="segmented" id="client-type" role="group" aria-label="Client type">
+                <button type="button" class="filter-btn is-active" data-client-type="local">LOCAL</button>
+                <button type="button" class="filter-btn" data-client-type="international">INTERNATIONAL</button>
+              </div>
+              <input type="hidden" name="clientType" id="client-type-input" value="local" />
+            </div>
+
+            <div class="field-grid">
+              <label class="form-field">
+                <span>CITY</span>
+                <input required type="text" name="city" placeholder="Helsinki" />
+              </label>
+              <label class="form-field">
+                <span>COUNTRY</span>
+                <input required type="text" name="country" placeholder="Finland" />
+              </label>
+            </div>
+
+            <p class="form-hint">Required for identity verification under Finnish accommodation registration rules.</p>
+
+            <div class="field-grid">
+              <label class="form-field">
+                <span>FATHER'S NAME</span>
+                <input required type="text" name="fatherName" placeholder="Matti" />
+              </label>
+              <label class="form-field">
+                <span>MOTHER'S NAME</span>
+                <input required type="text" name="motherName" placeholder="Liisa" />
+              </label>
+            </div>
+
+            <div class="field-grid">
+              <label class="form-field">
+                <span>GUARDIAN / PARENT MOBILE NUMBER</span>
+                <input required type="tel" name="guardianPhone" placeholder="+358 40 987 6543" />
+              </label>
+              <label class="form-field">
+                <span>BIRTH CERTIFICATE NUMBER</span>
+                <input required type="text" name="birthCertificateNumber" placeholder="BC-2026-0192" />
+              </label>
+            </div>
+
+            <div id="confirmed-note" class="confirmed-note" role="status" hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Your stay is reserved. This is a preview — no payment was charged and no email was sent.
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn--primary">CONFIRM BOOKING</button>
+          </form>
+
+          <aside class="summary">
+            <img id="summary-image" src="assets/img/aurora-igloo.jpg" alt="Glass igloo glowing beneath the northern lights in a snowy Finnish forest" width="1024" height="768" loading="lazy" />
+            <div class="summary__body">
+              <div class="summary__head">
+                <p>STAY SUMMARY</p>
+                <span class="summary__ref" id="summary-ref"></span>
+              </div>
+              <h2 id="summary-name"></h2>
+              <div class="summary__row">
+                <span id="summary-dates"></span>
+                <span id="summary-nights"></span>
+              </div>
+              <div class="summary__row">
+                <span>GUESTS</span>
+                <span id="summary-guests"></span>
+              </div>
+              <div class="summary__row" id="summary-package-row" hidden>
+                <span>PACKAGE</span>
+                <span id="summary-package"></span>
+              </div>
+              <div class="summary__total">
+                <span>TOTAL</span>
+                <span id="summary-total"></span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div id="modal-overlay" class="modal-overlay">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="conflict-title">
+          <button type="button" id="modal-close" class="btn btn--icon modal__close" aria-label="Close unavailable dates message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+          <div class="modal__mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <p class="modal__label">DATE CONFLICT</p>
+          <h2 id="conflict-title">Booking unavailable</h2>
+          <p class="modal__message">Booking Unavailable: You cannot enter any further because there are no reasonable slots available in our system for these dates.</p>
+          <button type="button" id="modal-back" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            CHOOSE DIFFERENT DATES
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/config.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="assets/js/auth.js" defer></script>
+    <script src="assets/js/booking.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => { (async () => {
+      const session = await FNAB_AUTH.requireAuth();
+      if (!session) return; // requireAuth() is already redirecting to login.html
+
+      document.getElementById("checkout-main").hidden = false;
+      FNAB_AUTH.renderAuthNav();
+
+      const checkInInput = document.getElementById("checkout-check-in");
+      const checkOutInput = document.getElementById("checkout-check-out");
+      const submitBtn = document.getElementById("submit-btn");
+      const confirmedNote = document.getElementById("confirmed-note");
+      const modalOverlay = document.getElementById("modal-overlay");
+
+      let conflict = false;
+      let confirmed = false;
+
+      function renderSummary() {
+        const booking = FNAB.getBooking();
+        const property = FNAB.getProperty(booking.propertyId);
+        const pkg = FNAB.getPackage(booking.packageTier);
+        const nights = FNAB.nightsBetween(booking.checkIn, booking.checkOut);
+        const total = nights * property.price + (pkg ? pkg.price : 0);
+
+        document.getElementById("summary-image").src = property.image;
+        document.getElementById("summary-image").alt = property.alt;
+        document.getElementById("summary-name").textContent = property.name;
+        document.getElementById("summary-dates").textContent = `${FNAB.formatDate(booking.checkIn)} → ${FNAB.formatDate(booking.checkOut)}`;
+        document.getElementById("summary-nights").textContent = `${nights} NIGHTS`;
+        document.getElementById("summary-guests").textContent = FNAB.travelersLabel(booking.adults, booking.children).toUpperCase();
+
+        const packageRow = document.getElementById("summary-package-row");
+        packageRow.hidden = !pkg;
+        if (pkg) document.getElementById("summary-package").textContent = `${pkg.name.toUpperCase()} (+€${pkg.price})`;
+
+        document.getElementById("summary-total").textContent = `€${total.toLocaleString("fi-FI")}`;
+      }
+
+      function renderSubmitState() {
+        submitBtn.disabled = conflict || confirmed;
+        submitBtn.textContent = confirmed ? "BOOKING CONFIRMED" : conflict ? "CONFIRMATION DISABLED" : "CONFIRM BOOKING";
+        confirmedNote.hidden = !confirmed;
+      }
+
+      function resetConflictAndConfirmed() {
+        conflict = false;
+        confirmed = false;
+        renderSubmitState();
+      }
+
+      function openModal() {
+        modalOverlay.classList.add("is-open");
+        document.getElementById("modal-back").focus();
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove("is-open");
+      }
+
+      const travelersTrigger = document.getElementById("travelers-trigger");
+      const travelersPanel = document.getElementById("travelers-panel");
+      const ADULTS_MIN = 1, ADULTS_MAX = 8;
+      const CHILDREN_MIN = 0, CHILDREN_MAX = 6;
+
+      function renderTravelers() {
+        const booking = FNAB.getBooking();
+        document.getElementById("adults-value").textContent = booking.adults;
+        document.getElementById("children-value").textContent = booking.children;
+        document.getElementById("travelers-total-value").textContent = booking.adults + booking.children;
+        document.getElementById("travelers-summary").textContent = FNAB.travelersLabel(booking.adults, booking.children);
+        travelersPanel.querySelector('[data-role="adults"][data-delta="-1"]').disabled = booking.adults <= ADULTS_MIN;
+        travelersPanel.querySelector('[data-role="adults"][data-delta="1"]').disabled = booking.adults >= ADULTS_MAX;
+        travelersPanel.querySelector('[data-role="children"][data-delta="-1"]').disabled = booking.children <= CHILDREN_MIN;
+        travelersPanel.querySelector('[data-role="children"][data-delta="1"]').disabled = booking.children >= CHILDREN_MAX;
+      }
+
+      function openTravelers() {
+        travelersPanel.hidden = false;
+        travelersTrigger.setAttribute("aria-expanded", "true");
+      }
+
+      function closeTravelers() {
+        travelersPanel.hidden = true;
+        travelersTrigger.setAttribute("aria-expanded", "false");
+      }
+
+      const initialBooking = FNAB.getBooking();
+      checkInInput.value = initialBooking.checkIn;
+      checkOutInput.value = initialBooking.checkOut;
+      checkOutInput.min = initialBooking.checkIn;
+      document.getElementById("summary-ref").textContent = `FN-${Math.floor(100000 + Math.random() * 900000)}`;
+      renderSummary();
+      renderSubmitState();
+      renderTravelers();
+
+      checkInInput.addEventListener("change", () => {
+        if (!checkInInput.value) return;
+        FNAB.setBooking({ checkIn: checkInInput.value });
+        checkOutInput.min = checkInInput.value;
+        resetConflictAndConfirmed();
+        renderSummary();
+      });
+
+      checkOutInput.addEventListener("change", () => {
+        if (!checkOutInput.value) return;
+        FNAB.setBooking({ checkOut: checkOutInput.value });
+        resetConflictAndConfirmed();
+        renderSummary();
+      });
+
+      const BOOKING_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/28819993/4duq88e/";
+
+      function sendBookingConfirmation(form) {
+        const booking = FNAB.getBooking();
+        const property = FNAB.getProperty(booking.propertyId);
+        const pkg = FNAB.getPackage(booking.packageTier);
+        const nights = FNAB.nightsBetween(booking.checkIn, booking.checkOut);
+        const total = nights * property.price + (pkg ? pkg.price : 0);
+        const data = new FormData(form);
+
+        const payload = {
+          bookingReference: document.getElementById("summary-ref").textContent,
+          firstName: data.get("firstName"),
+          lastName: data.get("lastName"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          city: data.get("city"),
+          country: data.get("country"),
+          clientType: data.get("clientType"),
+          fatherName: data.get("fatherName"),
+          motherName: data.get("motherName"),
+          guardianPhone: data.get("guardianPhone"),
+          birthCertificateNumber: data.get("birthCertificateNumber"),
+          stay: property.name,
+          tripImage: window.location.origin + "/" + property.image,
+          package: pkg ? pkg.name : null,
+          checkIn: booking.checkIn,
+          checkOut: booking.checkOut,
+          nights,
+          guests: FNAB.travelersLabel(booking.adults, booking.children),
+          total: `€${total.toLocaleString("fi-FI")}`,
+        };
+
+        // Content-Type is deliberately text/plain, not application/json: a JSON
+        // content-type forces a CORS preflight (OPTIONS) that this webhook
+        // doesn't answer, which silently fails the whole request in real
+        // browsers. Zapier still parses the body as JSON regardless of the
+        // declared type, and this avoids the preflight entirely — verified
+        // against the live webhook before shipping this.
+        fetch(BOOKING_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload),
+        }).catch((error) => console.error("Booking confirmation webhook failed:", error));
+      }
+
+      document.getElementById("checkout-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const booking = FNAB.getBooking();
+        const unavailable = booking.checkIn === "2026-12-12" && booking.checkOut === "2026-12-17";
+        if (unavailable) {
+          conflict = true;
+          openModal();
+        } else {
+          confirmed = true;
+          sendBookingConfirmation(event.target);
+        }
+        renderSubmitState();
+      });
+
+      document.getElementById("modal-close").addEventListener("click", closeModal);
+      document.getElementById("modal-back").addEventListener("click", () => {
+        closeModal();
+        checkInInput.focus();
+      });
+      modalOverlay.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeModal();
+      });
+
+      document.getElementById("client-type").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-client-type]");
+        if (!button) return;
+        document.querySelectorAll("#client-type .filter-btn").forEach((btn) => btn.classList.toggle("is-active", btn === button));
+        document.getElementById("client-type-input").value = button.dataset.clientType;
+      });
+
+      travelersTrigger.addEventListener("click", () => {
+        if (travelersPanel.hidden) openTravelers();
+        else closeTravelers();
+      });
+
+      document.getElementById("travelers-done").addEventListener("click", closeTravelers);
+
+      travelersPanel.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-role]");
+        if (!button || button.disabled) return;
+        const booking = FNAB.getBooking();
+        const delta = Number(button.dataset.delta);
+        if (button.dataset.role === "adults") {
+          const next = Math.min(ADULTS_MAX, Math.max(ADULTS_MIN, booking.adults + delta));
+          FNAB.setBooking({ adults: next });
+        } else {
+          const next = Math.min(CHILDREN_MAX, Math.max(CHILDREN_MIN, booking.children + delta));
+          FNAB.setBooking({ children: next });
+        }
+        renderTravelers();
+        renderSummary();
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!travelersPanel.hidden && !event.target.closest(".travelers")) closeTravelers();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !travelersPanel.hidden) closeTravelers();
+      });
+    })(); });
+    </script>
+  </body>
+</html>
