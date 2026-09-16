@@ -3,8 +3,6 @@ https://finland-trip-booking.vercel.app/
 <img width="1360" height="645" alt="image" src="https://github.com/user-attachments/assets/31210f85-b32b-4383-b1eb-9d0a33a1fb80" />
 <img width="1360" height="636" alt="image" src="https://github.com/user-attachments/assets/7de80783-e262-493f-b508-3d69ef3041a5" />
 <img width="1360" height="640" alt="image" src="https://github.com/user-attachments/assets/ca13de07-f56a-4bcf-9a4b-ea4b139c4604" />
-<img width="1080" height="1086" alt="shedule" src="https://github.com/user-attachments/assets/b4712cdb-cc93-4f81-9be5-b93f9e0c0e4a" />
-
 
 # Nordic Trails UI
 
